@@ -2,21 +2,24 @@
 // câu, các từ cách nhau 1 khoảng trắng(space), ký tự đầu ở mỗi từ viết hoa, các ký tự khác
 // trong từ viết thường
 
-let str1 = " this is A tEst ";
+let str1 = " this     is A tEst ";
 let str2 = "heLlo riKkei academy";
-function chuanHoa(str) {
-    str = str.trim().toLocaleLowerCase();
-    let arr = str.split(" ");
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase();
+let newstr1 = [];
+let newstr2 = [];
+function chuanHoa(str, newstr) {
+    str = str.trim().split(" ");
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== "") {
+            newstr.push(str[i][0].toUpperCase() + str[i].slice(1).toLowerCase());
+        }
     }
-    let result = arr.join(" ");
+    let a = newstr.join(" ");
     console.log("===============================");
     console.log("Câu được chuẩn hóa là");
-    console.log(result);
+    console.log(a);
     console.log("===============================");
 }
 console.log(str1);
-chuanHoa(str1);
+chuanHoa(str1, newstr1);
 console.log(str2);
-chuanHoa(str2);
+chuanHoa(str2, newstr2);
